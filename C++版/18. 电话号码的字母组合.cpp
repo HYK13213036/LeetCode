@@ -12,12 +12,14 @@ public:
         for(int i = 0; i < charmap[digits[start]].length();i++){
             temp += charmap[digits[start]][i];
             combine(digits, start+1);
-            temp.pop_back();     // 把多余的那个值给去掉
+            temp.pop_back();   
         }
     }
     vector<string> letterCombinations(string digits) {
-        if(digits == "")
+        if(digits == ""){
+            res.push_back(digits);
             return res;
+        }
         combine(digits, 0);
         return res;
     }
